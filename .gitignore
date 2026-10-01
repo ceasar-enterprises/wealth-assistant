@@ -1,0 +1,36 @@
+node_modules/
+dist/
+dist-tests/
+release/
+*.sqlite
+*.log
+widget-server.pid
+Desktop.ini
+Thumbs.db
+
+# Runtime state: logs, pid files, local stores. Never commit a session.
+# Listed per-directory rather than as a bare `data/` so the committed demo
+# fixtures under backend/data/ stay includable.
+**/data/*.log
+**/data/*.pid
+**/data/*.jsonl
+**/data/*-status.json
+**/data/status.json
+**/data/*.db
+
+# Widget window position + last rendered dashboard: local state, not source
+widget/data/widget-state.json
+
+# Build / packaging output
+*.exe
+*.msi
+*.zip
+*.blockmap
+out/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+.env
+.env.local

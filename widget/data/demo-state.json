@@ -1,0 +1,120 @@
+{
+  "baseCurrency": "USD",
+  "assets": [
+    {
+      "id": "a1",
+      "class": "bank",
+      "value": 482000,
+      "currency": "USD",
+      "valueSource": "plaid",
+      "liquidity": "liquid",
+      "name": "Checking - Chase .....4821"
+    },
+    {
+      "id": "a2",
+      "class": "bank",
+      "value": 1215000,
+      "currency": "USD",
+      "valueSource": "plaid",
+      "liquidity": "liquid",
+      "name": "Brokerage - Fidelity"
+    },
+    {
+      "id": "a3",
+      "class": "crypto",
+      "value": 128400,
+      "currency": "USD",
+      "valueSource": "exchange",
+      "liquidity": "liquid",
+      "name": "BTC / ETH (OKX + MetaMask)"
+    },
+    {
+      "id": "a4",
+      "class": "property",
+      "value": 2900000,
+      "currency": "EUR",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "name": "Lakefront estate - Lake Como"
+    },
+    {
+      "id": "a5",
+      "class": "property",
+      "value": 1450000,
+      "currency": "USD",
+      "valueSource": "manual",
+      "liquidity": "semi_liquid",
+      "name": "Condo portfolio - NYC"
+    },
+    {
+      "id": "a6",
+      "class": "vehicle",
+      "value": 215000,
+      "currency": "USD",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "name": "Private fleet"
+    },
+    {
+      "id": "a7",
+      "class": "business",
+      "value": 3200000,
+      "currency": "USD",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "name": "Holding Co - operating stake"
+    },
+    {
+      "id": "a8",
+      "class": "liability",
+      "value": 890000,
+      "currency": "USD",
+      "valueSource": "manual",
+      "liquidity": "semi_liquid",
+      "name": "Mortgage - NYC condos"
+    },
+    {
+      "id": "a9",
+      "class": "cash",
+      "value": 60000000,
+      "currency": "UGX",
+      "valueSource": "manual",
+      "liquidity": "liquid",
+      "name": "Mobile money float - UGX"
+    }
+  ],
+  "moves": [
+    {
+      "id": "mtrksx7j-dbm11ar8",
+      "trustId": "",
+      "state": "approved",
+      "description": "Pay estate staff payroll (quarter)",
+      "direction": "out",
+      "amount": 42500,
+      "currency": "USD",
+      "payee": "Estate payroll acc",
+      "rail": "wire",
+      "highRisk": false,
+      "proposedBy": "steward:maria@family-office",
+      "proposedAt": "2026-09-07T18:30:26.335Z",
+      "approvedBy": "principal@user",
+      "approvedAt": "2026-09-08T20:18:43.440Z"
+    },
+    {
+      "id": "mtrksx7j-xfr9ymfu",
+      "trustId": "",
+      "state": "rejected",
+      "description": "Property acquisition - Lake Como annex",
+      "direction": "out",
+      "amount": 1850000,
+      "currency": "EUR",
+      "payee": "Notary escrow - Como",
+      "rail": "wire",
+      "highRisk": true,
+      "proposedBy": "steward:maria@family-office",
+      "proposedAt": "2026-09-07T18:30:26.335Z",
+      "rejectedBy": "principal@user",
+      "rejectedAt": "2026-09-07T18:31:06.703Z"
+    }
+  ]
+}

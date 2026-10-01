@@ -1,0 +1,386 @@
+/* Wealth Command tile — premium, restrained, glass. Gold/neutral on deep navy. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: rgba(10, 12, 22, 0.92);
+  --glass: rgba(255, 255, 255, 0.045);
+  --glass-strong: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.09);
+  --gold: #d9b25e;
+  --gold-dim: rgba(217, 178, 94, 0.5);
+  --text: #eef1f7;
+  --muted: #9aa3b5;
+  --danger: #e56a5a;
+  --ok: #62c78a;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: transparent;
+  color: var(--text);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --------------------------------------------------------- */
+/* Collapsed tile                                             */
+/* --------------------------------------------------------- */
+
+#tile {
+  position: relative;
+  width: 320px;
+  height: 96px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#tile:hover {
+  border-color: var(--gold-dim);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6), 0 0 26px rgba(217, 178, 94, 0.14);
+}
+#tile:hover .tile-glow {
+  opacity: 1;
+}
+#tile:focus-visible {
+  outline: 2px solid var(--gold);
+}
+.tile-glow {
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 20% 20%, rgba(217, 178, 94, 0.16), transparent 55%);
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+.tile-glow::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(120deg, transparent 30%, rgba(217, 178, 94, 0.06) 50%, transparent 70%);
+  background-size: 250% 250%;
+  animation: shine 6s ease-in-out infinite;
+}
+@keyframes shine {
+  0%, 100% { background-position: 120% 0; }
+  50% { background-position: -20% 0; }
+}
+.tile-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+  gap: 14px;
+}
+.tile-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(217, 178, 94, 0.28), rgba(217, 178, 94, 0.08));
+  border: 1px solid var(--gold-dim);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.tile-metrics {
+  flex: 1;
+  min-width: 0;
+}
+.tile-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.tile-value {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  background: linear-gradient(100deg, #f3e3b2 0%, var(--gold) 45%, #a8833a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tile-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+.badge.stale {
+  background: rgba(154, 163, 181, 0.2);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tile-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+  font-size: 9px;
+  color: rgba(154, 163, 181, 0.6);
+}
+
+/* --------------------------------------------------------- */
+/* Expanded panel                                             */
+/* --------------------------------------------------------- */
+
+#panel {
+  width: 360px;
+  max-height: 420px;
+  border-radius: 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(217, 178, 94, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#panel::before {
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+#panel.flip-in {
+  animation: panelIn 240ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+}
+.panel-title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 8px var(--ok);
+  display: inline-block;
+}
+.icon-btn {
+  background: var(--glass-strong);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+}
+.icon-btn:hover {
+  border-color: var(--gold-dim);
+}
+
+.cards {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+.card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.card:hover {
+  border-color: rgba(217, 178, 94, 0.28);
+  transform: translateY(-1px);
+}
+.card-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.card-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(100deg, #f3e3b2, var(--gold) 60%, #a8833a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* approvals */
+.approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.approval {
+  background: var(--glass-strong);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+  animation: rowIn 200ms cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+}
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.approval:hover {
+  border-color: var(--gold-dim);
+  background: rgba(255, 255, 255, 0.09);
+}
+.approval.danger {
+  border-color: rgba(229, 106, 90, 0.4);
+}
+.approval.danger:hover {
+  border-color: rgba(229, 106, 90, 0.65);
+}
+.approval-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.approval-desc {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.35;
+}
+.approval-amt {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--gold);
+}
+.approval-meta {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 6px 0 8px;
+}
+.approval-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  flex: 1;
+  border: none;
+  border-radius: 9px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #101321;
+  transition: transform 0.12s ease, filter 0.15s ease, opacity 0.15s ease;
+}
+.btn:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+.btn:not(:disabled):active {
+  transform: translateY(1px) scale(0.99);
+}
+.btn.approve {
+  background: linear-gradient(135deg, #7ad49b, var(--ok));
+}
+.btn.reject {
+  background: rgba(154, 163, 181, 0.25);
+  color: var(--text);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.empty {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 6px 0;
+}
+
+/* portfolio / liquidity */
+.liquidity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.liquidity-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text);
+}
+.liquidity-row .amt {
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-dim);
+}
+
+.panel-foot {
+  padding: 10px 16px;
+  font-size: 10px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+}
+.panel-foot .status {
+  color: var(--ok);
+}
+.panel-foot .status.err {
+  color: var(--danger);
+}

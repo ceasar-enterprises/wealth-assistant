@@ -1,0 +1,20 @@
+{
+  "name": "wealth-assistant-backend",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Core domain engine for Wealth Command: trust/permissions, net worth, money-move approvals, FX rates.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc -p tsconfig.tests.json && node --test \"dist-tests/**/*.test.js\"",
+    "typecheck": "tsc --noEmit",
+    "demo": "node scripts/generate-demo.js",
+    "verify": "node scripts/verify-e2e.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}

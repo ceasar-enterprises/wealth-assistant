@@ -1,0 +1,27 @@
+{
+  "name": "wealth-command-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Developer AI-terminal hook for Wealth Command: auto-summarise any session (what done / decisions / open threads / next steps), store, recall, export. CLI + local REST API + Node hook.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "wealth-sdk": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc -p tsconfig.tests.json && node --test \"dist-tests/**/*.test.js\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "wealth-assistant-backend": "file:../backend"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}

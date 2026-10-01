@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wealth Command — Tile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Collapsed tile -->
+  <div id="tile" role="button" tabindex="0" title="Wealth Command — click to open">
+    <div class="tile-glow"></div>
+    <div class="tile-body">
+      <div class="tile-mark">W</div>
+      <div class="tile-metrics">
+        <div class="tile-label">NET WORTH</div>
+        <div class="tile-value" id="tileValue">--</div>
+      </div>
+      <div class="tile-badges">
+        <div class="badge" id="approvalBadge" hidden>0</div>
+        <div class="badge stale" id="staleBadge" hidden>stale</div>
+      </div>
+      <div class="tile-hint">click</div>
+    </div>
+  </div>
+
+  <!-- Expanded mini command panel -->
+  <div id="panel" hidden>
+    <div class="panel-head">
+      <div class="panel-title">Wealth Command</div>
+      <div class="panel-actions">
+        <span class="live-dot" title="Live"></span>
+        <button id="closePanel" class="icon-btn" title="Send back to tile">&minus;</button>
+      </div>
+    </div>
+
+    <div class="cards">
+      <!-- Net worth card -->
+      <div class="card" data-card="networth">
+        <div class="card-label">Net worth</div>
+        <div class="card-value" id="panelNetWorth">--</div>
+        <div class="card-sub" id="panelSub">computing…</div>
+      </div>
+
+      <!-- Approvals card -->
+      <div class="card" data-card="approvals">
+        <div class="card-label">Pending approvals</div>
+        <div id="approvalList" class="approval-list">
+          <div class="empty">No pending approvals.</div>
+        </div>
+      </div>
+
+      <!-- Activity card -->
+      <div class="card" data-card="activity">
+        <div class="card-label">Portfolio</div>
+        <div id="liquidityList" class="liquidity-list"></div>
+        <div class="card-sub" id="assetSub"></div>
+      </div>
+    </div>
+
+    <div class="panel-foot" id="panelFoot">Connecting…</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

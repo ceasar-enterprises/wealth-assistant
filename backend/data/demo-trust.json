@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-09-07T21:20:55.584Z",
+  "trust": {
+    "id": "trust-rutaro-family-office",
+    "kind": "family_office",
+    "name": "Rutaro Family Office",
+    "ownerUid": "principal@rutaro",
+    "createdAt": "2025-01-15T09:00:00.000Z",
+    "updatedAt": "2026-09-07T21:20:55.584Z",
+    "baseCurrency": "USD",
+    "automationPaused": false
+  },
+  "members": [
+    {
+      "trustId": "trust-rutaro-family-office",
+      "uid": "principal@rutaro",
+      "role": "principal",
+      "scopes": [
+        "assets",
+        "people",
+        "money",
+        "reports"
+      ],
+      "grantedAt": "2025-01-15T09:00:00.000Z",
+      "grantedBy": "system"
+    },
+    {
+      "trustId": "trust-rutaro-family-office",
+      "uid": "maria@family-office",
+      "role": "steward",
+      "scopes": [
+        "assets",
+        "money"
+      ],
+      "grantedAt": "2025-02-01T08:00:00.000Z",
+      "grantedBy": "principal@rutaro"
+    },
+    {
+      "trustId": "trust-rutaro-family-office",
+      "uid": "adv@consulo",
+      "role": "advisor",
+      "scopes": [
+        "reports"
+      ],
+      "grantedAt": "2025-03-10T10:00:00.000Z",
+      "grantedBy": "principal@rutaro"
+    }
+  ],
+  "assets": [
+    {
+      "id": "ba1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "bank",
+      "name": "Checking - Stanbic .....9102",
+      "value": 412000,
+      "currency": "USD",
+      "valueSource": "plaid",
+      "liquidity": "liquid",
+      "createdAt": "2025-01-20T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "ba2",
+      "trustId": "trust-rutaro-family-office",
+      "class": "bank",
+      "name": "Brokerage - Interactive Brokers",
+      "value": 1845000,
+      "currency": "USD",
+      "valueSource": "plaid",
+      "liquidity": "liquid",
+      "createdAt": "2025-01-20T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "ba3",
+      "trustId": "trust-rutaro-family-office",
+      "class": "bank",
+      "name": "Onshore GBP account - Barclays",
+      "value": 260000,
+      "currency": "GBP",
+      "valueSource": "plaid",
+      "liquidity": "liquid",
+      "createdAt": "2025-02-11T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "cr1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "crypto",
+      "name": "BTC / ETH (OKX + MetaMask cold)",
+      "value": 186400,
+      "currency": "USD",
+      "valueSource": "exchange",
+      "liquidity": "liquid",
+      "custodian": "Self-custody",
+      "createdAt": "2025-04-02T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "pt1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "property",
+      "name": "Lakefront estate - Lake Como (IT)",
+      "value": 3600000,
+      "currency": "EUR",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "custodian": "Notary escrow - Como",
+      "createdAt": "2025-01-25T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "pt2",
+      "trustId": "trust-rutaro-family-office",
+      "class": "property",
+      "name": "Townhouses - Kampala (UG)",
+      "value": 1900000,
+      "currency": "USD",
+      "valueSource": "manual",
+      "liquidity": "semi_liquid",
+      "createdAt": "2025-03-01T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "pt3",
+      "trustId": "trust-rutaro-family-office",
+      "class": "property",
+      "name": "Condo portfolio - NYC",
+      "value": 2100000,
+      "currency": "USD",
+      "valueSource": "manual",
+      "liquidity": "semi_liquid",
+      "createdAt": "2025-03-01T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "ve1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "vehicle",
+      "name": "Private fleet",
+      "value": 310000,
+      "currency": "USD",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "createdAt": "2025-05-10T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "bz1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "business",
+      "name": "Rutaro Holdings - operating stake",
+      "value": 4200000,
+      "currency": "USD",
+      "valueSource": "estimate",
+      "liquidity": "illiquid",
+      "createdAt": "2025-02-01T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "lb1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "liability",
+      "name": "Mortgage - NYC condos",
+      "value": 940000,
+      "currency": "USD",
+      "valueSource": "manual",
+      "liquidity": "semi_liquid",
+      "createdAt": "2025-03-01T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    },
+    {
+      "id": "cs1",
+      "trustId": "trust-rutaro-family-office",
+      "class": "cash",
+      "name": "Mobile money float - UGX",
+      "value": 150000000,
+      "currency": "UGX",
+      "valueSource": "manual",
+      "liquidity": "liquid",
+      "custodian": "MTN MoMo / Airtel",
+      "createdAt": "2025-06-01T00:00:00.000Z",
+      "updatedAt": "2026-09-07T21:20:55.584Z"
+    }
+  ],
+  "moves": [
+    {
+      "id": "mtrqw65m-k9mvg6e0",
+      "trustId": "",
+      "state": "executed",
+      "description": "University fees - children (Q1)",
+      "direction": "out",
+      "amount": 86000,
+      "currency": "USD",
+      "payee": "St Teresa International School",
+      "rail": "wire",
+      "highRisk": false,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.598Z",
+      "approvedBy": "principal@rutaro",
+      "approvedAt": "2026-09-07T21:20:55.598Z",
+      "executedBy": "maria@family-office",
+      "executedAt": "2026-09-07T21:20:55.598Z"
+    },
+    {
+      "id": "mtrqw65q-zucu3bem",
+      "trustId": "",
+      "state": "executed",
+      "description": "Como estate upkeep - annual",
+      "direction": "out",
+      "amount": 210000,
+      "currency": "EUR",
+      "payee": "Villa management - Como",
+      "rail": "wire",
+      "highRisk": false,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.598Z",
+      "approvedBy": "principal@rutaro",
+      "approvedAt": "2026-09-07T21:20:55.598Z",
+      "executedBy": "maria@family-office",
+      "executedAt": "2026-09-07T21:20:55.598Z"
+    },
+    {
+      "id": "mtrqw65q-zi0ofims",
+      "trustId": "",
+      "state": "pending",
+      "description": "Annex acquisition - Lake Como (HIGH RISK)",
+      "direction": "out",
+      "amount": 1980000,
+      "currency": "EUR",
+      "payee": "Notary escrow - Como",
+      "rail": "wire",
+      "highRisk": true,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.598Z"
+    },
+    {
+      "id": "mtrqw65q-26i05m9d",
+      "trustId": "",
+      "state": "rejected",
+      "description": "Quarterly payroll - estate staff",
+      "direction": "out",
+      "amount": 44500,
+      "currency": "USD",
+      "payee": "Estate payroll account",
+      "rail": "wire",
+      "highRisk": false,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.598Z",
+      "rejectedBy": "principal@rutaro",
+      "rejectedAt": "2026-09-07T21:20:55.599Z"
+    },
+    {
+      "id": "mtrqw65r-tlkhecmo",
+      "trustId": "",
+      "state": "approved",
+      "description": "Revised quarterly payroll (net of advances)",
+      "direction": "out",
+      "amount": 38200,
+      "currency": "USD",
+      "payee": "Estate payroll account",
+      "rail": "wire",
+      "highRisk": false,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.599Z",
+      "approvedBy": "principal@rutaro",
+      "approvedAt": "2026-09-07T21:20:55.599Z"
+    },
+    {
+      "id": "mtrqw65r-6wq4jynk",
+      "trustId": "",
+      "state": "pending",
+      "description": "Property income - Kampala townhouses",
+      "direction": "in",
+      "amount": 95000,
+      "currency": "USD",
+      "payee": "Kampala rentals",
+      "rail": "integration",
+      "highRisk": false,
+      "proposedBy": "maria@family-office",
+      "proposedAt": "2026-09-07T21:20:55.599Z"
+    }
+  ],
+  "moneyMovesByState": {
+    "executed": 2,
+    "pending": 2,
+    "rejected": 1,
+    "approved": 1
+  },
+  "rates": {
+    "USD": 1,
+    "EUR": 1.08,
+    "GBP": 1.29,
+    "UGX": 0.00026954177897574127
+  },
+  "netWorth": {
+    "baseCurrency": "USD",
+    "total": 16157231.26684636,
+    "netEquity": 15217231.26684636,
+    "byClass": {
+      "bank": 2592400,
+      "crypto": 186400,
+      "property": 7888000,
+      "vehicle": 310000,
+      "business": 4200000,
+      "liability": 940000,
+      "cash": 40431.26684636119
+    },
+    "byLiquidity": {
+      "liquid": 2819231.266846361,
+      "semi_liquid": 4940000,
+      "illiquid": 8398000
+    },
+    "isStale": false
+  },
+  "audit": {
+    "entries": 13,
+    "root": "bb833c2ae8c9c9e6a1ead28aac5a0076a6fc2cfdd9d12fee2b55ec8a09ad8856",
+    "verified": true
+  },
+  "export": {
+    "file": "demo-export.json",
+    "recordCount": 17,
+    "auditVerified": true,
+    "encrypted": true
+  }
+}

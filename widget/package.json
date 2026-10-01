@@ -1,0 +1,23 @@
+{
+  "name": "wealth-assistant-widget",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Wealth Command interactive desktop widget (Electron tile + local bridge server).",
+  "main": "src/server.js",
+  "scripts": {
+    "server": "node src/server.js",
+    "start": "electron .",
+    "tile": "electron src/main.js",
+    "icons": "node scripts/gen-icons.js",
+    "package": "node scripts/package.js",
+    "package:zip": "node scripts/package.js --zip",
+    "install": "node scripts/setup-install.js install",
+    "install:dev": "node scripts/setup-install.js install --dev",
+    "uninstall": "node scripts/setup-install.js remove"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^33.4.11"
+  }
+}
